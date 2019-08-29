@@ -1,3 +1,12 @@
+/**
+ * 发布-订阅模式
+ * @module event
+ * @param {Object} list 事件队列
+ * @param {Function} on 订阅事件
+ * @param {Function} emit 发布事件
+ * @param {Function} remove 移除事件订阅
+ */
+
 let event = {
   list: {},
   on (key, fn) {
@@ -13,7 +22,6 @@ let event = {
     })
   },
   remove (key, fn) {
-    console.log(`取消了函数${fn}执行`)
     const fns = this.list[key];
     if (!fns) return false;
     // 不确定具体函数就全部清空
