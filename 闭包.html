@@ -1,0 +1,34 @@
+<html>
+ <body>
+    <div>1 点击我</div>
+    <div>2 点击我</div>
+    <div>3 点击我</div>
+    <div>4 点击我</div>
+    <div>5 点击我</div>
+    <br>
+    <p>1 点击我</p>
+    <p>2 点击我</p>
+    <p>3 点击我</p>
+ <script>
+    /* 立即执行函数实现闭包 */
+    /* div */
+    var nodes = document.getElementsByTagName( 'div' );
+    for ( var i = 0, len = nodes.length; i < len; i++ ){
+        nodes[ i ].onclick = (function(index) {
+            return function(){
+                console.log( index );
+            }
+        })(i)
+    };
+    /* p */
+    var nodes = document.getElementsByTagName( 'p' );
+    for ( var i = 0, len = nodes.length; i < len; i++ ){
+        (function(index) {
+            nodes[ index ].onclick = function(){
+                console.log( index );
+            }
+        })(i)
+    };
+ </script>
+ </body>
+</html>
