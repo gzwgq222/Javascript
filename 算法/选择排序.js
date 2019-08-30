@@ -1,4 +1,7 @@
-/* 选择排序 */ 
+/**
+ * 选择排序
+ * 最小的排前面
+ */  
 
 function selectionSort (arr) {
   const len = arr.length;
