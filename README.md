@@ -8,7 +8,7 @@
 * 手写promise
 * 发布-订阅模式
 * 高阶函数
-* apply实现call
-* call实现apply
 * 实现call
 * 实现apply
+* apply实现call
+* call实现apply

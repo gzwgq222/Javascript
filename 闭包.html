@@ -10,7 +10,10 @@
     <p>2 点击我</p>
     <p>3 点击我</p>
  <script>
-    /* 立即执行函数实现闭包 */
+    /** 
+     * 立即执行函数实现闭包
+     * 作用：1：变量私有化，2：保存对词法作用域（活动对象）的引用
+    */
     /* div */
     var nodes = document.getElementsByTagName( 'div' );
     for ( var i = 0, len = nodes.length; i < len; i++ ){
