@@ -1,5 +1,6 @@
 /**
  * 二分法查找
+ * 从中间按区间查找
 */
 
 function binarySeach(arr, num) {
@@ -18,4 +19,4 @@ function binarySeach(arr, num) {
 }
 var ary=[1,4,7,8,12,34,67,88,99,100]
 
-console.log(binarySeach(ary, 1))
+console.log(binarySeach(ary, 4))
