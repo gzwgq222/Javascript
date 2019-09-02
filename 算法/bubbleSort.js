@@ -1,4 +1,7 @@
-/*  冒泡排序 */
+/**
+ * 冒泡排序
+ * 一次比较相邻的元素，大或小的往后排 
+ */
 
 function sortarr(arr){
     let count = 0;
