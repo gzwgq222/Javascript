@@ -57,3 +57,6 @@ function findMaxDuplicateChar(str) {
 const str = 'afjghdfraaaasdenas';
 
 console.log(findMaxDuplicateChar(str));
+
+const arr2 = [10,5,11,7,8,9];
+console.log(Math.max.apply(null, arr2) - Math.min.apply(null, arr2))
