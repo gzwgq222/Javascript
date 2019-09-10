@@ -28,24 +28,18 @@ console.log('unique1: ', unique1(arr));
 /* 查找字符中重复次数最多的字母 */
 
 function findMaxDuplicateChar(str) {
+    if (!str || str.length === 1) return str;
     const len = str.length;
-    if (len === 1) return str;
     let dict = {},
-        i = 0;
+        i = 0,
+        char = '',
+        max = 1;
     for(; i < len; i++) {
         const cur = str[i];
-        if (!dict[cur]) {
-            dict[cur] = 1;
-        } else {
-            dict[cur] += 1;
-        }
-    }
-    let char = '',
-    max = 1;
-    for(let key in dict) {
-        if (dict[key] > max) {
-            char = key;
-            max = dict[key];
+        dict[cur] ? dict[cur] += 1 :  dict[cur] = 1
+        if (dict[cur] > max) {
+            char = cur;
+            max = dict[cur];
         }
     }
     return {
@@ -54,9 +48,25 @@ function findMaxDuplicateChar(str) {
     }
 
 }
+// other
+function findMaxLetter (str) {
+    let maxLetter = ''
+    let maxLen = 0
+    let key = {}
+    str.split('').forEach(item => {
+      key[item] ? key[item]++ : key[item] = 1
+      if (key[item] > maxLen) {
+        maxLen = key[item]
+        maxLetter = item
+      }
+    })
+  
+    return [maxLetter, maxLen]
+  }
 const str = 'afjghdfraaaasdenas';
 
 console.log(findMaxDuplicateChar(str));
 
 const arr2 = [10,5,11,7,8,9];
-console.log(Math.max.apply(null, arr2) - Math.min.apply(null, arr2))
+// console.log(Math.max.apply(null, arr2) - Math.min.apply(null, arr2))
+console.log('max：', findMaxLetter(str))
