@@ -30,27 +30,27 @@ console.log('unique1: ', unique1(arr));
 function findMaxDuplicateChar(str) {
     const len = str.length;
     if (len === 1) return str;
-    let map = {},
+    let dict = {},
         i = 0;
     for(; i < len; i++) {
         const cur = str[i];
-        if (!map[cur]) {
-            map[cur] = 1;
+        if (!dict[cur]) {
+            dict[cur] = 1;
         } else {
-            map[cur] += 1;
+            dict[cur] += 1;
         }
     }
-    let maxStr = '',
-        maxVal = 1;
-    for(let key in map) {
-        if (map[key] > maxVal) {
-            maxStr = key;
-            maxVal = map[key];
+    let char = '',
+    max = 1;
+    for(let key in dict) {
+        if (dict[key] > max) {
+            char = key;
+            max = dict[key];
         }
     }
     return {
-        str: maxStr,
-        num: maxVal
+        char,
+        max
     }
 
 }
