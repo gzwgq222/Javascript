@@ -33,7 +33,7 @@ function findMaxDuplicateChar(str) {
     let dict = {},
         i = 0,
         char = '',
-        max = 1;
+        max = 0;
     for(; i < len; i++) {
         const cur = str[i];
         dict[cur] ? dict[cur] += 1 :  dict[cur] = 1
